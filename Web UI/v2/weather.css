@@ -1,0 +1,86 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    color: #333;
+    font-size: 15px;
+    background-color: #F5F0F6;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    color: #BC412B;
+}
+
+h3 {
+    text-align: center;
+}
+
+.title {
+    background-color: #F5F0F6;
+    color: black;
+}
+
+.active {
+    background-color: #7FB685;
+  }
+
+/* Navbar stuff */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #385F71;
+}
+
+li {
+    float: left;
+    border-right: 1px solid #F5F0F6;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: #2B4162;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: lightblue;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* End of navbar */
