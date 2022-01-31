@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <title>STEAM Weather Station</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+  <!-- Title above nav bar -->
+  <div class="title">
+    <h1>STEAM Weather Station</h1>
+  </div>
+
+  <!-- nav bar -->
+  <ul>
+    <li><a class="active" href="home.html">Home</a></li>
+    <li style="float:right"><a href="about.html">About Us</a></li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Weather</a>
+      <div class="dropdown-content">
+        <a href="temperature.html">Temperature</a>
+        <a href="humidity.html">Humidity</a>
+        <a href="#Air">Air Pressure</a>
+        <a href="#Wind">Wind Speed</a>
+        <a href="#VOCs">VOCs</a>
+        <a href="#Direction">Wind Direction</a>
+        <a href="weather.html">All Weather</a>
+      </div>
+    </li>
+  </ul>
+
+  <!-- Grid of icons & making them clickable -->
+
+  <!-- Format for image grid row 1 -->
+  <div class="flex-container">
+    <div style="flex-grow: 1"><img src="thermometer.png" alt="Blue Thermometer Icon"
+        usemap="#temperaturemap"><br>Temperature</br></div>
+    <div style="flex-grow: 1"><img src="humidity.png" alt="Blue Fog Icon" usemap="#humiditymap"><br>Humidity</br></div>
+    <div style="flex-grow: 1"><img src="pressure.png" alt="Blue Cloud Icon" usemap="#airmap"><br>Air Pressure</br></div>
+  </div>
+
+  <!-- Format for image grid row 2 -->
+  <br>
+  <div class="flex-container">
+    <div style="flex-grow: 1"><img src="wind.png" alt="Blue Wind Icon" usemap="#windmap"><br>Wind Speed</br></div>
+    <div style="flex-grow: 1"><img src="VOCs.png" alt="Blue Cloud Icon" usemap="#vocsmap"><br>VOCs</br></div>
+    <div style="flex-grow: 1"><img src="direction.png" alt="Blue Compass Icon" usemap="#directionmap"><br>Wind Direction</br>
+    </div>
+  </div>
+  </br>
+
+  <!-- Format for image grid row 3 -->
+  <br>
+  <div class="flex-container">
+    <div style="flex-grow: 1"><img src="allweather.png" alt="Blue Weather Icon" usemap="#weathermap"><br>All Weather</br>
+    </div>
+  </div>
+  </br>
+
+  <!-- clickable area on temperature icon -->
+  <map name="temperaturemap">
+    <area shape="rect" coords="0, 0, 100, 125" alt="Humidity" href="temperature.html">
+  </map>
+
+  <!-- clickable area on humidity icon -->
+  <map name="humiditymap">
+    <area shape="rect" coords="0, 0, 100, 125" alt="Humidity" href="humidity.html">
+  </map>
+
+  <!-- clickable area on air pressure icon -->
+  <map name="airmap">
+    <area shape="rect" coords="0, 0, 100, 125" alt="Air Pressure" href="air.html">
+  </map>
+
+  <!-- clickable area on wind speed icon -->
+  <map name="windmap">
+    <area shape="rect" coords="0, 0, 100, 125" alt="Wind Speed" href="wind.html">
+  </map>
+
+  <!-- clickable area on VOCs icon -->
+  <map name="vocsmap">
+    <area shape="rect" coords="0, 0, 100, 125" alt="VOCs" href="vocs.html">
+  </map>
+
+  <!-- clickable area on wind direction icon -->
+  <map name="directionmap">
+    <area shape="rect" coords="0, 0, 100, 125" alt="Wind Direction" href="direction.html">
+  </map>
+
+  <!-- clickable area on master weather icon -->
+  <map name="weathermap">
+    <area shape="rect" coords="0, 0, 200, 250" alt="All Weather" href="weather.html">
+  </map>
+
+  <!-- end of Grid of icons & making them clickable -->
+
+  <!--  div class="editors">
+  <h3>Wyatt Clark, Innese Gonzalez, Daniel Laws, Heidi Picazo-Gonzalez</h3>
+  </div>
+
+
+  https://www.c-sharpcorner.com/UploadFile/16101a/creating-animation-charts-with-html5-and-javascript -->
+
+</html>

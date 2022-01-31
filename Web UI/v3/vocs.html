@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <title>STEAM Weather Station</title>
+  <link rel="stylesheet" href="weather.css">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js'></script>
+
+</head>
+
+<body>
+  <!-- Title above nav bar -->
+  <div class="title">
+    <h1>STEAM Weather Station</h1>
+  </div>
+
+  <!-- nav bar -->
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li style="float:right"><a href="about.html">About Us</a></li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn"> Weather</a>
+      <div class="dropdown-content">
+        <a href="temperature.html">Temperature</a>
+        <a href="humidity.html">Humidity</a>
+        <a href="air.html">Air Pressure</a>
+        <a href="wind.html">Wind Speed</a>
+        <a class="active" href="vocs.html">VOCs</a>
+        <a href="direction.html">Wind Direction</a>
+        <a href="weather.html">All Weather</a>
+      </div>
+    </li>
+  </ul>
+
+  <h2>VOCs</h2>
+  <div class="container">
+    <div class="center">
+      <button id="tvocs">TVOCs</button>
+      <button id="eco2">eCO₂</button>
+    </div>
+  </div>
+  <br>
+
+
+  <!-- graph setup -->
+  <div class="small-chart">
+    <canvas id="vocsChart" width="1" height="1"></canvas>
+    <canvas id="eco2Chart" width="1" height="1"></canvas>
+  </div>
+  <script>
+
+document.getElementById('tvocs').addEventListener('click', function () {
+    var ctx = document.getElementById('vocsChart').getContext('2d');
+    var vocsChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['12AM', '1AM', '2AM', '3AM', '4AM', '5AM', '6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM', '9PM', '10PM', '11PM'],
+        datasets: [{
+          label: 'Total concentration of VOCs (TVOC)',
+          data: [10000, 20000, 30000, 40000, 50000, 6000, 7000, 8000, 9000, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400],
+          backgroundColor: ['rgba(56, 95, 113, .5)'],
+          borderColor: ['rgba(43, 65, 98)'],
+          borderWidth: 1,
+          lineTension: 0
+        }],
+        data: []
+
+        },
+        options: {
+          responsive: true,
+
+          tooltips: {
+            mode: 'index',
+            intersect: false,
+          },
+          scales: {
+            xAxes: [{
+              display: true,
+              scaleLabel: {
+                display: true,
+                labelString: 'Time'
+              }
+            }],
+            yAxes: [{
+              display: true,
+              ticks: {
+                suggestedMin: 0,
+                suggestedMax: 60000
+
+              },
+              scaleLabel: {
+                display: true,
+                labelString: 'ppb'
+              }
+            }]
+
+          }
+        }
+      });
+
+    })
+
+    document.getElementById('eco2').addEventListener('click', function () {
+      var ctx = document.getElementById('vocsChart').getContext('2d');
+    var eco2Chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['12AM', '1AM', '2AM', '3AM', '4AM', '5AM', '6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM', '9PM', '10PM', '11PM'],
+        datasets: [{
+          label: 'eCO₂',
+          data: [10000, 20000, 30000, 40000, 50000, 6000, 7000, 8000, 9000, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400],
+          backgroundColor: ['rgba(127, 182, 133, .5)'],
+          borderColor: ['rgba(0, 0, 0)'],
+          borderWidth: 1,
+          lineTension: 0
+        }],
+        data: []
+
+        },
+        options: {
+          responsive: true,
+
+          tooltips: {
+            mode: 'index',
+            intersect: false,
+          },
+          scales: {
+            xAxes: [{
+              display: true,
+              scaleLabel: {
+                display: true,
+                labelString: 'Time'
+              }
+            }],
+            yAxes: [{
+              display: true,
+              ticks: {
+                suggestedMin: 0,
+                suggestedMax: 60000
+
+              },
+              scaleLabel: {
+                display: true,
+                labelString: 'ppm'
+              }
+            }]
+
+          }
+        }
+      });
+
+    })
+  </script>
+
+
+</body>
+
+</html>
